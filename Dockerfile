@@ -3,7 +3,8 @@ FROM ubuntu:xenial
 
 # Install Nginx.
 RUN \
-  apt-get install software-properties-common
+  apt-get update \
+  apt-get install software-properties-common \
   add-apt-repository -y ppa:nginx/stable && \
   apt-get update && \
   apt-get install -y nginx && \

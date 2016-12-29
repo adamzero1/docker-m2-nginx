@@ -18,8 +18,11 @@ VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/v
 # Define working directory.
 WORKDIR /etc/nginx
 
+COPY files/entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
+
 # Define default command.
-CMD ["nginx"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Expose ports.
 EXPOSE 8081 80 443

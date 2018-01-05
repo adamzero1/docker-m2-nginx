@@ -1,6 +1,8 @@
 # Pull base image.
 FROM ubuntu:xenial
 
+RUN echo "working"
+
 # Install Nginx.
 RUN \
   apt-get update && \
